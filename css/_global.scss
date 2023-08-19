@@ -1,0 +1,70 @@
+$main-color: #2196f3;
+$alt-color: #1787e0;
+$text-color: #666;
+$section-background: #e2e2e2;
+
+* {
+  font-family: "Cairo", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@mixin breakPoint($point) {
+  @if $point == mobile {
+    @media (max-width: 575.98px) {
+      @content;
+    }
+  } @else if $point == small {
+    @media (min-width: 576px) and (max-width: 767.98px) {
+      @content;
+    }
+  } @else if $point == medium {
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      @content;
+    }
+  } @else if $point == large {
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+      @content;
+    }
+  } @else if $point == veryLarge {
+    @media (min-width: 1200px) and (max-width: 1399.98px) {
+      @content;
+    }
+  }
+}
+
+.container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include breakPoint(mobile) {
+    width: 100%;
+  }
+  @include breakPoint(small) {
+    width: 90%;
+  }
+  @include breakPoint(medium) {
+    width: 90%;
+  }
+  @include breakPoint(large) {
+    width: 80%;
+  }
+  @include breakPoint(veryLarge) {
+    width: 80%;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
